@@ -1,4 +1,3 @@
-from cgi import print_directory
 from Blackjack.playing_card import Deck
 
 def print_Deck(deck: Deck) -> None:
