@@ -1,8 +1,9 @@
-from enum import Enum, auto
+from enum import Enum, auto, IntEnum, unique
 from typing import List
 import random
 
 # トランプの絵柄
+@unique
 class Suit(Enum):
     CLUB = auto()
     DIAMOND = auto()
@@ -10,7 +11,8 @@ class Suit(Enum):
     SPADE = auto()
 
 # トランプの数値
-class Number(Enum):
+@unique
+class Number(IntEnum):
     ACE = 1
     TWO = 2
     THREE = 3
@@ -47,6 +49,10 @@ class Deck():
         for s in Suit:
             for no in Number:
                 self.cards.append(Card(s, no))
+
+    # 山札の残り枚数を返す
+    def count_remainder(self) -> int:
+        return len(self.cards)
 
     # 山札をランダムに並べ替える
     def shuffle_cards(self) -> None:
