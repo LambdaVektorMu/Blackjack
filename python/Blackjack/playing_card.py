@@ -29,7 +29,7 @@ class Number(IntEnum):
 
 # トランプ1枚のクラス
 class Card():
-    def __init__(self, suit:Suit, number:Number) -> None:
+    def __init__(self, suit: Suit, number: Number) -> None:
         self.suit = suit
         self.number = number
 
